@@ -31,9 +31,9 @@ add_subdirectory(bin)
 
 # Use "cmake .. -ENABLE_TESTS=ON" to enable tests
 
-option(ENABLE_TESTS "Enable tests" OFF)
+option(BUILD_TESTS "Build tests" OFF)
 
-if(${ENABLE_TESTS})
+if(BUILD_TESTS)
   enable_testing()
   add_subdirectory(tests)
 endif()
