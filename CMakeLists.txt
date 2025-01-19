@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.30.5)
 
 project(
   project_name
@@ -6,8 +6,9 @@ project(
   DESCRIPTION "Project description"
   LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
 
 if(WIN32)
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR})
@@ -28,6 +29,14 @@ endif()
 
 add_subdirectory(lib)
 add_subdirectory(bin)
+
+add_executable(${PROJECT_NAME} ./bin/main.cpp)
+
+target_compile_options(${PROJECT_NAME} PRIVATE -Werror -Wall -Wextra -pedantic)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE stladapter)
+
 
 # Use "cmake .. -ENABLE_TESTS=ON" to enable tests
 
