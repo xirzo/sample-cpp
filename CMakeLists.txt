@@ -34,9 +34,6 @@ add_executable(${PROJECT_NAME} ./bin/main.cpp)
 target_compile_options(${PROJECT_NAME} PRIVATE -Werror -Wall -Wextra -pedantic)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE stladapter)
-
-
 # Use "cmake .. -ENABLE_TESTS=ON" to enable tests
 
 option(BUILD_TESTS "Build tests" OFF)
