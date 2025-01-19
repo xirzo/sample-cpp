@@ -28,7 +28,6 @@ else()
 endif()
 
 add_subdirectory(lib)
-add_subdirectory(bin)
 
 add_executable(${PROJECT_NAME} ./bin/main.cpp)
 
