@@ -3,6 +3,7 @@
 
 # Build
 build/
+out/
 
 # Clang format
 compile_commands.json
