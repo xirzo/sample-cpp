@@ -3,6 +3,6 @@
 #include "test.h"
 
 int main(void) {
-    PrintHelloWorld();
+    print_hello_world();
     return EXIT_SUCCESS;
 }
